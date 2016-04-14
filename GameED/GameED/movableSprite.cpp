@@ -1,16 +1,18 @@
 #include "movableSprite.h"
 
+// Construtor
 movableSprite::movableSprite()
 {
 	defaultLocation = "Content/";
 	mouseIsPressed = false;
 }
 
-
+// Destrutor
 movableSprite::~movableSprite()
 {
 }
 
+// Carrega imagem a partir de arquivo e seta posição da imagem
 void movableSprite::load(std::string filename, int x, int y)
 {
 	_texture.loadFromFile(defaultLocation + filename);
@@ -18,6 +20,7 @@ void movableSprite::load(std::string filename, int x, int y)
 	_sprite.setPosition(x, y);
 }
 
+// Verifica eventos relacionados à imagem
 void movableSprite::eventHandler(sf::RenderWindow& window, sf::Event& event)
 {
 	switch (event.type)
@@ -40,6 +43,7 @@ void movableSprite::eventHandler(sf::RenderWindow& window, sf::Event& event)
 	}
 }
 
+// Atualiza posições da imagem
 void movableSprite::update(float timeAsSeconds, sf::RenderWindow& window)
 {
 	sf::Mouse mouse;
@@ -59,6 +63,7 @@ void movableSprite::update(float timeAsSeconds, sf::RenderWindow& window)
 	}
 }
 
+// Desenha conteúdo na janela
 void movableSprite::draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default)
 {
 	target.draw(_sprite);

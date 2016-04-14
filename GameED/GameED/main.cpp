@@ -6,7 +6,6 @@
  * Função main do jogo, cria um objeto do 
  * tipo Game e chama o loop principal.
 ******************************************/
-
 int main()
 {
 	Game game;

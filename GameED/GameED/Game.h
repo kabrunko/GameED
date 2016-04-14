@@ -5,22 +5,23 @@
 #include "movableSprite.h"
 enum State { menu, playing };
 
+// Classe Game
 class Game
 {
 public:
 	Game();
 	~Game();
 
-	void run();
-	void initialize();
-	void eventHandler();
-	void update(float);
-	void draw();
+	void run();					// Loop principal do jogo
+	void initialize();				// Inicializa recursos secundários
+	void eventHandler();				// Gerenciador de eventos
+	void update(float);				// Atualiza conteúdo do jogo
+	void draw();					// Exibe conteúdo na janela
 
 private:
-	sf::RenderWindow mainWindow;
-	unsigned int windowWidth, windowHeight;
-	State currentState;
+	sf::RenderWindow mainWindow;			// Janela
+	unsigned int windowWidth, windowHeight;		// Largura e altura da janela
+	State currentState;				// Estado atual do jogo
 
 	sf::Sprite sLayout;
 	sf::Texture tLayout;

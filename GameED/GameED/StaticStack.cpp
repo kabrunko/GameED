@@ -1,6 +1,8 @@
+// Classe StaticStack
+
 #include "StaticStack.h"
 
-
+// Construtor de pilha padrão
 template<class T>
 StaticStack<T>::StaticStack()
 {
@@ -9,6 +11,7 @@ StaticStack<T>::StaticStack()
 	max = DEFAULTMAX - 1;
 }
 
+// Construtor de pilha com tamanho definido pelo usuário
 template<class T>
 StaticStack<T>::StaticStack(int size)
 {
@@ -17,6 +20,7 @@ StaticStack<T>::StaticStack(int size)
 	max = size - 1;
 }
 
+// Destrutor de pilha
 template<class T>
 StaticStack<T>::~StaticStack()
 {
@@ -24,6 +28,7 @@ StaticStack<T>::~StaticStack()
 		delete[] node;
 }
 
+// Push, adiciona item no topo da pilha
 template<class T>
 bool StaticStack<T>::push(T item)
 {
@@ -37,6 +42,7 @@ bool StaticStack<T>::push(T item)
 		return false;
 }
 
+// Pop, remove item do topo da pilha.
 template<class T>
 T StaticStack<T>::pop()
 {
@@ -48,6 +54,7 @@ T StaticStack<T>::pop()
 	}
 }
 
+// Verifica se a pilha está cheia.
 template<class T>
 bool StaticStack<T>::isFull()
 {
@@ -57,6 +64,7 @@ bool StaticStack<T>::isFull()
 		return false;
 }
 
+// Verifica se a pilha está vazia.
 template<class T>
 bool StaticStack<T>::isEmpty()
 {
@@ -66,6 +74,7 @@ bool StaticStack<T>::isEmpty()
 		return false;
 }
 
+// Retorna o item presente no topo da pilha.
 template<class T>
 T StaticStack<T>::getTop()
 {

@@ -7,7 +7,6 @@
 // Construtor da classe Game
 // Recebe por parâmetro sf::VideoMode com largura e altura da janela de jogo,
 // uma string contendo o nome da janela e sf::Style o estilo da janela.
-
 Game::Game() : mainWindow(sf::VideoMode(800, 600), "EDGame", sf::Style::Close)
 {
 	mainWindow.setFramerateLimit(30);				// Força a taxa de frames limite do jogo
